@@ -22,6 +22,9 @@ namespace ASPxPivotGridLayoutUpgradeEvent {
                 } finally {
                     ASPxPivotGridOld.EndUpdate();
                 }
+
+            ASPxPivotGridNew.OptionsLayout.Columns.RemoveOldColumns = false;
+            ASPxPivotGridNew.OptionsLayout.Columns.AddNewColumns = false;
             }
         }
 
@@ -34,11 +37,6 @@ namespace ASPxPivotGridLayoutUpgradeEvent {
             if(layout == null) {
                 return;
             }
-
-            ASPxPivotGridNew.OptionsLayout.Columns.RemoveOldColumns = false;
-            ASPxPivotGridNew.OptionsLayout.Columns.AddNewColumns = false;
-
-
             ASPxPivotGridNew.LoadLayoutFromString(layout);
         }
         protected void ASPxPivotGridNew_LayoutUpgrade(object sender, LayoutUpgradeEventArgs e) {
