@@ -22,9 +22,6 @@ namespace ASPxPivotGridLayoutUpgradeEvent {
                 } finally {
                     ASPxPivotGridOld.EndUpdate();
                 }
-
-            ASPxPivotGridNew.OptionsLayout.Columns.RemoveOldColumns = false;
-            ASPxPivotGridNew.OptionsLayout.Columns.AddNewColumns = false;
             }
         }
 
@@ -37,6 +34,7 @@ namespace ASPxPivotGridLayoutUpgradeEvent {
             if(layout == null) {
                 return;
             }
+            
             ASPxPivotGridNew.LoadLayoutFromString(layout);
         }
         protected void ASPxPivotGridNew_LayoutUpgrade(object sender, LayoutUpgradeEventArgs e) {
@@ -44,7 +42,7 @@ namespace ASPxPivotGridLayoutUpgradeEvent {
                 var newField = new PivotGridField() { 
                     FieldName = "Quantity",
                     Caption = "Quantity",
-                    Name = "fieldQuantity",
+                    ID = "fieldQuantity",
                     Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
                 };
                 ASPxPivotGridNew.Fields.Add(newField);

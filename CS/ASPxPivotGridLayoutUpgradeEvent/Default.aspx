@@ -14,10 +14,10 @@
         </div>
         <div style="margin-top: 20px">
             <dx:ASPxPivotGrid ID="ASPxPivotGridOld" OptionsLayout-LayoutVersion="1.0" runat="server" ClientIDMode="AutoID" 
-                DataSourceID="SqlDataSource2" Width="850px" Theme="Metropolis" OptionsLayout-Columns-StoreAppearance ="True">
+                DataSourceID="SqlDataSource2" Width="850px" Theme="Metropolis" OptionsLayout-Columns-StoreAppearance ="True" OptionsLayout-StoreAppearance="true">
                 <Fields>
                     <dx:PivotGridField ID="fieldProductName" Area="RowArea" AreaIndex="1" FieldName="ProductName" 
-                        Name="fieldProductName" Caption="Product">
+                         Name="fieldProductName" Caption="Product 65664">
                     </dx:PivotGridField>
                     <dx:PivotGridField ID="fieldCategoryName" Area="RowArea" AreaIndex="0" FieldName="CategoryName" 
                         Name="fieldCategoryName" Caption="Category">
@@ -48,10 +48,10 @@
                 the applied layout and adds a new <b>Quantity</b> field to it.</p>
         </div>
             <div>
-            <dx:ASPxButton ID="ASPxButtonRestore" runat="server" Text="Restore Layout" OnClick="RestoreLayout_Click" Theme="Metropolis"></dx:ASPxButton>
+            <dx:ASPxButton ID="ASPxButtonRestore"  runat="server" Text="Restore Layout" OnClick="RestoreLayout_Click" Theme="Metropolis"></dx:ASPxButton>
             </div>
         <div style="margin-top: 20px">
-            <dx:ASPxPivotGrid ID="ASPxPivotGridNew" OptionsLayout-LayoutVersion="2.0" 
+            <dx:ASPxPivotGrid ID="ASPxPivotGridNew" OptionsLayout-LayoutVersion="2.0" OptionsLayout-Columns-AddNewColumns ="False" OptionsLayout-Columns-RemoveOldColumns ="False"
                 OnLayoutUpgrade="ASPxPivotGridNew_LayoutUpgrade" runat="server" 
                 ClientIDMode="AutoID" DataSourceID="SqlDataSource2" Width="850px" Theme="Metropolis">
                 <Fields>
@@ -60,8 +60,8 @@
                     <dx:PivotGridField ID="fieldSalesPerson" Area="ColumnArea" AreaIndex="1" FieldName="Sales_Person" 
                         Name="fieldSalesPerson" Caption="Sales Person">
                     </dx:PivotGridField>
-                    <dx:PivotGridField ID="fieldProductName2" Area="RowArea" AreaIndex="1" FieldName="ProductName"
-                        Name="fieldProductName" Caption="Product">
+                    <dx:PivotGridField ID="fieldProductName2" Area="RowArea" AreaIndex="1" FieldName="ProductName" 
+                        Name="fieldProductName" Caption="Product ввпав"> 
                     </dx:PivotGridField>
                     <dx:PivotGridField ID="fieldCategoryName2" Area="RowArea" AreaIndex="0" FieldName="CategoryName" 
                         Name="fieldCategoryName" Caption="Category">

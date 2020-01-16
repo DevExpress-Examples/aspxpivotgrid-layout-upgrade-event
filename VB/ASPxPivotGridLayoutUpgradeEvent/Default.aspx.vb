@@ -32,20 +32,20 @@ Namespace ASPxPivotGridLayoutUpgradeEvent
 
 		Protected Sub RestoreLayout_Click(ByVal sender As Object, ByVal e As EventArgs)
 			Dim layout As String = CStr(Session("Layout"))
-			If layout Is Nothing Then
-				Return
-			End If
+            If layout Is Nothing Then
+                Return
+            End If
 
-			ASPxPivotGridNew.OptionsLayout.Columns.RemoveOldColumns = False
-			ASPxPivotGridNew.OptionsLayout.Columns.AddNewColumns = False
-
-
-			ASPxPivotGridNew.LoadLayoutFromString(layout)
+            ASPxPivotGridNew.LoadLayoutFromString(layout)
 		End Sub
 		Protected Sub ASPxPivotGridNew_LayoutUpgrade(ByVal sender As Object, ByVal e As LayoutUpgradeEventArgs)
 			If e.PreviousVersion = "1.0" Then
-				Dim newField = New PivotGridField() With {.FieldName = "Quantity", .Caption = "Quantity", .Name = "fieldQuantity", .Area = DevExpress.XtraPivotGrid.PivotArea.DataArea}
-				ASPxPivotGridNew.Fields.Add(newField)
+                Dim newField = New PivotGridField() With {
+                    .FieldName = "Quantity",
+                    .Caption = "Quantity",
+                    .ID = "fieldQuantity",
+                    .Area = DevExpress.XtraPivotGrid.PivotArea.DataArea}
+                ASPxPivotGridNew.Fields.Add(newField)
 			End If
 
 

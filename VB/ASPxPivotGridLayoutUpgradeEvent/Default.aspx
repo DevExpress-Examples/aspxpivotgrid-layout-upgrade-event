@@ -53,7 +53,7 @@
 			</div>
 		<div style="margin-top: 20px">
 			<dx:ASPxPivotGrid ID="ASPxPivotGridNew" OptionsLayout-LayoutVersion="2.0" 
-				OnLayoutUpgrade="ASPxPivotGridNew_LayoutUpgrade" runat="server" 
+				OnLayoutUpgrade="ASPxPivotGridNew_LayoutUpgrade" runat="server" OptionsLayout-Columns-AddNewColumns ="False" OptionsLayout-Columns-RemoveOldColumns ="False"
 				ClientIDMode="AutoID" DataSourceID="SqlDataSource2" Width="850px" Theme="Metropolis">
 				<Fields>
 						<dx:PivotGridField ID="fieldCountry" Area="ColumnArea" AreaIndex="0" FieldName="Country" Name="fieldCountry">
