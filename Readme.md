@@ -10,7 +10,7 @@ The following example demonstrates how to save the layout from the one Pivot Gri
 
 The old Pivot Grid contains the "Year" and "Quarter" fields that do not exist in the new Pivot Grid. The new Pivot Grid contains the "Country" and "Sales Person" fields that do not exist in the old Pivot Grid. When you apply the saved layout to the new Pivot Grid control, the "Year" and "Quarter" fields from the saved layout replace the "Country" and "Sales Person" fields. This behavior is set by the [RemoveOldColumns](https://docs.devexpress.com/CoreLibraries/DevExpress.Utils.OptionsColumnLayout.RemoveOldColumns) and [AddNewColumns](https://docs.devexpress.com/CoreLibraries/DevExpress.Utils.OptionsColumnLayout.AddNewColumns) properties. In this example, the **RemoveOldColumns** and **AddNewColumns** properties are set to **false**. As a result, the Pivot Grid restores the fields that exist in the saved layout, and leaves fields that exist both in the Pivot Grid and in the saved layout with the same **Name** values. 
 
-The [LayoutVersion](https://docs.devexpress.com/CoreLibraries/DevExpress.Utils.OptionsLayoutBase.LayoutVersion) property is defined both for two Pivot Grid controls. When you click the "Restore layout" button and the saved layout is restored from a data store, the **LayoutUpgrade** event is raised because the layout versions are different. As a result, a new "Quantity" field is added to the new Pivot Grid control.
+The [LayoutVersion](https://docs.devexpress.com/CoreLibraries/DevExpress.Utils.OptionsLayoutBase.LayoutVersion) property is defined for two Pivot Grid controls. When you click the "Restore layout" button (and the saved layout is restored from a data store), the **LayoutUpgrade** event is raised since the layout versions are different. As a result, a new "Quantity" field is added to the new Pivot Grid control.
 
 The Pivot Grid uses a field's [Name](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPivotGrid.PivotGridFieldBase.Name) property value to determine fields in a stored layout.
 
@@ -32,15 +32,15 @@ API in this example:
 
     If old and new fields have the same ID, the control applies the saved layout changes to the fields in the control.
     
-    If old and new fields have the different ID, the behavior is following: 
+    If old and new fields have a different ID, then the following behavior occurs:
 
-    - If both properties are *true*, Pivot Grid removes fields from the saved layout and leaves fields in the control. 
+    - If both properties are true, the Pivot Grid removes fields from the saved layout and allows the fields in the control to remain there. 
 
-    - If both properties are *false*, Pivot Grid restores fields from the layout and removes fields in the control.
+    - If both properties are *false*, Pivot Grid restores fields from the layout and removes fields from the control.
 
-    - If **AddNewColumns** is *true* and **RemoveOldColumns** is *false*, Pivot Grid restores fields from the layout and leaves fields in the control.
+    - If **AddNewColumns** is *true* and **RemoveOldColumns** is *false*, Pivot Grid restores fields from the layout and leaves fields in the control to remain there.
 
-    - If **AddNewColumns** is *false* and **RemoveOldColumns** is *true*, Pivot Grid removes fields both in the layout and control. 
+    - If **AddNewColumns** is *false* and **RemoveOldColumns** is *true*, Pivot Grid removes fields both from the layout and control. 
 
 * [ASPxPivotGrid.LayoutUpgrade](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxPivotGrid.ASPxPivotGrid.LayoutUpgrade)
 
