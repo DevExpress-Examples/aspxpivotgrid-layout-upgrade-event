@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ASPxPivotGridLayoutUpgradeEvent._Default" %>
 
-<%@ Register Assembly="DevExpress.Web.v19.2, Version=19.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
-<%@ Register Assembly="DevExpress.Web.ASPxPivotGrid.v19.2, Version=19.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxPivotGrid" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.ASPxPivotGrid.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxPivotGrid" TagPrefix="dx" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div style="margin-top: 10px">
@@ -14,25 +14,39 @@
         </div>
         <div style="margin-top: 20px">
             <dx:ASPxPivotGrid ID="ASPxPivotGridOld" OptionsLayout-LayoutVersion="1.0" runat="server" ClientIDMode="AutoID" 
-                DataSourceID="SqlDataSource2" Width="850px" Theme="Metropolis" OptionsLayout-Columns-StoreAppearance ="True" OptionsLayout-StoreAppearance="true">
+                DataSourceID="SqlDataSource2" Width="850px" Theme="Metropolis" OptionsLayout-Columns-StoreAppearance ="True" OptionsLayout-StoreAppearance="true" IsMaterialDesign="False">
                 <Fields>
-                    <dx:PivotGridField ID="fieldProductName" Area="RowArea" AreaIndex="1" FieldName="ProductName" 
+                    <dx:PivotGridField ID="fieldProductName" Area="RowArea" AreaIndex="1" 
                          Name="fieldProductName" Caption="Product 65664">
+                        <DataBindingSerializable>
+                            <dx:DataSourceColumnBinding ColumnName="ProductName" />
+                        </DataBindingSerializable>
                     </dx:PivotGridField>
-                    <dx:PivotGridField ID="fieldCategoryName" Area="RowArea" AreaIndex="0" FieldName="CategoryName" 
+                    <dx:PivotGridField ID="fieldCategoryName" Area="RowArea" AreaIndex="0" 
                         Name="fieldCategoryName" Caption="Category">
+                        <DataBindingSerializable>
+                            <dx:DataSourceColumnBinding ColumnName="CategoryName" />
+                        </DataBindingSerializable>
                     </dx:PivotGridField>
-                    <dx:PivotGridField ID="fieldExtendedPrice" Area="DataArea" AreaIndex="0" FieldName="Extended_Price" 
+                    <dx:PivotGridField ID="fieldExtendedPrice" Area="DataArea" AreaIndex="0" 
                         Name="fieldExtendedPrice">
+                        <DataBindingSerializable>
+                            <dx:DataSourceColumnBinding ColumnName="Extended_Price" />
+                        </DataBindingSerializable>
                     </dx:PivotGridField>
-                    <dx:PivotGridField ID="fieldYear" Area="ColumnArea" AreaIndex="0"
-                                                    GroupInterval="DateYear" Caption="Year"
-                                                    FieldName="OrderDate" UnboundFieldName="fieldYear">
+                    <dx:PivotGridField ID="fieldYear" Area="ColumnArea" AreaIndex="0" Caption="Year" UnboundFieldName="fieldYear">
+                        <DataBindingSerializable>
+                            <dx:DataSourceColumnBinding ColumnName="OrderDate" GroupInterval="DateYear" />
+                        </DataBindingSerializable>
                     </dx:PivotGridField>
                     <dx:PivotGridField ID="fieldQuarter" Area="ColumnArea"
                                                     AreaIndex="1" GroupInterval="DateQuarter"
-                                                    Caption="Quarter" FieldName="OrderDate" Visible="True"
+                                                    Caption="Quarter" Visible="True"
                                                     ValueFormat-FormatType="Custom" ValueFormat-FormatString="Qtr{0}" UnboundFieldName="fieldQuarter">                        
+<ValueFormat FormatString="Qtr{0}" FormatType="Custom"></ValueFormat>
+                        <DataBindingSerializable>
+                            <dx:DataSourceColumnBinding ColumnName="OrderDate" GroupInterval="DateQuarter" />
+                        </DataBindingSerializable>
                     </dx:PivotGridField>
                 </Fields>
                 <OptionsView DataHeadersDisplayMode="Popup" DataHeadersPopupMaxColumnCount="1" HorizontalScrollBarMode="Auto" 
@@ -53,26 +67,43 @@
         <div style="margin-top: 20px">
             <dx:ASPxPivotGrid ID="ASPxPivotGridNew" OptionsLayout-LayoutVersion="2.0" OptionsLayout-Columns-AddNewColumns ="False" OptionsLayout-Columns-RemoveOldColumns ="False"
                 OnLayoutUpgrade="ASPxPivotGridNew_LayoutUpgrade" runat="server" 
-                ClientIDMode="AutoID" DataSourceID="SqlDataSource2" Width="850px" Theme="Metropolis">
+                ClientIDMode="AutoID" DataSourceID="SqlDataSource2" Width="850px" Theme="Metropolis" IsMaterialDesign="False">
                 <Fields>
-                        <dx:PivotGridField ID="fieldCountry" Area="ColumnArea" AreaIndex="0" FieldName="Country" Name="fieldCountry">
+                        <dx:PivotGridField ID="fieldCountry" Area="ColumnArea" AreaIndex="0" Name="fieldCountry">
+                            <DataBindingSerializable>
+                                <dx:DataSourceColumnBinding ColumnName="Country" />
+                            </DataBindingSerializable>
                     </dx:PivotGridField>
-                    <dx:PivotGridField ID="fieldSalesPerson" Area="ColumnArea" AreaIndex="1" FieldName="Sales_Person" 
+                    <dx:PivotGridField ID="fieldSalesPerson" Area="ColumnArea" AreaIndex="1" 
                         Name="fieldSalesPerson" Caption="Sales Person">
+                        <DataBindingSerializable>
+                            <dx:DataSourceColumnBinding ColumnName="Sales_Person" />
+                        </DataBindingSerializable>
                     </dx:PivotGridField>
-                    <dx:PivotGridField ID="fieldProductName2" Area="RowArea" AreaIndex="1" FieldName="ProductName" 
-                        Name="fieldProductName" Caption="Product ввпав"> 
+                    <dx:PivotGridField ID="fieldProductName2" Area="RowArea" AreaIndex="1" 
+                        Name="fieldProductName" Caption="Product Name"> 
+                        <DataBindingSerializable>
+                            <dx:DataSourceColumnBinding ColumnName="ProductName" />
+                        </DataBindingSerializable>
                     </dx:PivotGridField>
-                    <dx:PivotGridField ID="fieldCategoryName2" Area="RowArea" AreaIndex="0" FieldName="CategoryName" 
+                    <dx:PivotGridField ID="fieldCategoryName2" Area="RowArea" AreaIndex="0" 
                         Name="fieldCategoryName" Caption="Category">
+                        <DataBindingSerializable>
+                            <dx:DataSourceColumnBinding ColumnName="CategoryName" />
+                        </DataBindingSerializable>
                     </dx:PivotGridField>
-                    <dx:PivotGridField ID="fieldExtendedPrice2" Area="DataArea" AreaIndex="0" FieldName="Extended_Price" 
+                    <dx:PivotGridField ID="fieldExtendedPrice2" Area="DataArea" AreaIndex="0" 
                         Name="fieldExtendedPrice" Caption ="Extended Price">
+                        <DataBindingSerializable>
+                            <dx:DataSourceColumnBinding ColumnName="Extended_Price" />
+                        </DataBindingSerializable>
                     </dx:PivotGridField>
                 </Fields>
                 <OptionsView DataHeadersDisplayMode="Popup" DataHeadersPopupMaxColumnCount="1" HorizontalScrollBarMode="Auto" 
                     RowTotalsLocation="Tree" ShowColumnTotals="False" />
                 <OptionsData DataProcessingEngine="Optimized"  />
+
+<OptionsLayout Columns-RemoveOldColumns="False" Columns-AddNewColumns="False" LayoutVersion="2.0"></OptionsLayout>
             </dx:ASPxPivotGrid>
         </div>
         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
