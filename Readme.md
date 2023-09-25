@@ -4,11 +4,11 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 
-# ASPxPivotGrid - How to manage Pivot Grid Layout
+# Pivot Grid for WebForms - How to Manage Pivot Grid Layout
 
 The following example demonstrates how to save the layout from the one Pivot Grid and apply it to another Pivot Grid.
 
-## Files to Look at
+## Files to Review
 
 * [Default.aspx (CS)](/CS/ASPxPivotGridLayoutUpgradeEvent/Default.aspx) / [Default.aspx (VB)](/VB/ASPxPivotGridLayoutUpgradeEvent/Default.aspx)
 * [Default.aspx.cs](/CS/ASPxPivotGridLayoutUpgradeEvent/Default.aspx.cs) / [Default.aspx.vb](/VB/ASPxPivotGridLayoutUpgradeEvent/Default.aspx.vb)
